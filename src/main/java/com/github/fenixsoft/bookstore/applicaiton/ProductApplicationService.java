@@ -15,14 +15,12 @@
  *
  *        https://github.com/fenixsoft
  */
-
 package com.github.fenixsoft.bookstore.applicaiton;
 
 import com.github.fenixsoft.bookstore.domain.payment.Stockpile;
 import com.github.fenixsoft.bookstore.domain.payment.StockpileService;
 import com.github.fenixsoft.bookstore.domain.warehouse.Product;
 import com.github.fenixsoft.bookstore.domain.warehouse.ProductService;
-
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.transaction.Transactional;
@@ -32,7 +30,7 @@ import javax.transaction.Transactional;
  *
  * @author icyfenix@gmail.com
  * @date 2020/3/15 20:05
- **/
+ */
 @Named
 @Transactional
 public class ProductApplicationService {
@@ -47,42 +45,41 @@ public class ProductApplicationService {
      * 获取仓库中所有的货物信息
      */
     public Iterable<Product> getAllProducts() {
-        return service.getAllProducts();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * 获取仓库中指定的货物信息
      */
     public Product getProduct(Integer id) {
-        return service.getProduct(id);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * 创建或更新产品信息
      */
     public Product saveProduct(Product product) {
-        return service.saveProduct(product);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * 删除指定产品
      */
     public void removeProduct(Integer id) {
-        service.removeProduct(id);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 
     /**
      * 根据产品查询库存
      */
     public Stockpile getStockpile(Integer productId) {
-        return stockpileService.getByProductId(productId);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * 将指定的产品库存调整为指定数额
      */
     public void setStockpileAmountByProductId(Integer productId, Integer amount) {
-        stockpileService.set(productId, amount);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

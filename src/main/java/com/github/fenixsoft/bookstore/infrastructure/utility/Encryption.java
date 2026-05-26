@@ -15,13 +15,11 @@
  *
  *        https://github.com/fenixsoft
  */
-
 package com.github.fenixsoft.bookstore.infrastructure.utility;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-
 import javax.inject.Named;
 import java.util.Optional;
 
@@ -30,7 +28,7 @@ import java.util.Optional;
  *
  * @author icyfenix@gmail.com
  * @date 2020/3/10 18:02
- **/
+ */
 @Named
 public class Encryption {
 
@@ -40,15 +38,13 @@ public class Encryption {
      */
     @Bean
     public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 
     /**
      * 使用默认加密算法进行编码
      */
     public String encode(CharSequence rawPassword) {
-        return passwordEncoder().encode(Optional.ofNullable(rawPassword).orElse(""));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

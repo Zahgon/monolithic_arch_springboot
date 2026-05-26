@@ -15,7 +15,6 @@
  *
  *        https://github.com/fenixsoft
  */
-
 package com.github.fenixsoft.bookstore.resource;
 
 import com.github.fenixsoft.bookstore.applicaiton.AccountApplicationService;
@@ -28,7 +27,6 @@ import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
-
 import javax.inject.Inject;
 import javax.validation.Valid;
 import javax.ws.rs.*;
@@ -42,7 +40,7 @@ import javax.ws.rs.core.Response;
  *
  * @author icyfenix@gmail.com
  * @date 2020/3/6 20:52
- **/
+ */
 @Path("/accounts")
 @Component
 @CacheConfig(cacheNames = "resource.account")
@@ -60,7 +58,7 @@ public class AccountResource {
     @Path("/{username}")
     @Cacheable(key = "#username")
     public Account getUser(@PathParam("username") String username) {
-        return service.findAccountByUsername(username);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -69,7 +67,7 @@ public class AccountResource {
     @POST
     @CacheEvict(key = "#user.username")
     public Response createUser(@Valid @UniqueAccount Account user) {
-        return CommonResponse.op(() -> service.createAccount(user));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -78,6 +76,6 @@ public class AccountResource {
     @PUT
     @CacheEvict(key = "#user.username")
     public Response updateUser(@Valid @AuthenticatedAccount @NotConflictAccount Account user) {
-        return CommonResponse.op(() -> service.updateAccount(user));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

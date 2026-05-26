@@ -15,11 +15,9 @@
  *
  *        https://github.com/fenixsoft
  */
-
 package com.github.fenixsoft.bookstore.domain.warehouse;
 
 import com.github.fenixsoft.bookstore.domain.BaseEntity;
-
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -41,8 +39,8 @@ public class Product extends BaseEntity {
 
     @NotNull(message = "商品应当有明确的价格")
     @Min(value = 0, message = "商品价格最低为零")
-    // 这里是偷懒，正式场合使用BigDecimal来表示金额
-    private Double price;
+    private Double // 这里是偷懒，正式场合使用BigDecimal来表示金额
+    price;
 
     @Min(value = 0, message = "评分最低为0")
     @Max(value = 10, message = "评分最高为10")
@@ -59,60 +57,58 @@ public class Product extends BaseEntity {
     private Set<Specification> specifications;
 
     public String getTitle() {
-        return title;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public Double getPrice() {
-        return price;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void setPrice(Double price) {
-        this.price = price;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public Float getRate() {
-        return rate;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void setRate(Float rate) {
-        this.rate = rate;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String getDescription() {
-        return description;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String getCover() {
-        return cover;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void setCover(String cover) {
-        this.cover = cover;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String getDetail() {
-        return detail;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void setDetail(String detail) {
-        this.detail = detail;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public Set<Specification> getSpecifications() {
-        return specifications;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void setSpecifications(Set<Specification> specifications) {
-        this.specifications = specifications;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
-
 }

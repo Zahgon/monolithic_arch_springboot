@@ -15,12 +15,10 @@
  *
  *        https://github.com/fenixsoft
  */
-
 package com.github.fenixsoft.bookstore.infrastructure.jaxrs;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
@@ -30,7 +28,7 @@ import javax.ws.rs.ext.Provider;
  *
  * @author icyfenix@gmail.c
  * @date 2020/3/12 16:43
- **/
+ */
 @Provider
 public class BaseExceptionMapper implements ExceptionMapper<Throwable> {
 
@@ -38,7 +36,6 @@ public class BaseExceptionMapper implements ExceptionMapper<Throwable> {
 
     @Override
     public Response toResponse(Throwable exception) {
-        log.error(exception.getMessage(), exception);
-        return CommonResponse.failure(exception.getMessage());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

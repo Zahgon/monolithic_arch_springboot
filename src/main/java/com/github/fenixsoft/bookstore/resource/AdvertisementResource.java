@@ -15,14 +15,12 @@
  *
  *        https://github.com/fenixsoft
  */
-
 package com.github.fenixsoft.bookstore.resource;
 
 import com.github.fenixsoft.bookstore.domain.warehouse.Advertisement;
 import com.github.fenixsoft.bookstore.domain.warehouse.AdvertisementRepository;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
-
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -34,7 +32,7 @@ import javax.ws.rs.core.MediaType;
  *
  * @author icyfenix@gmail.com
  * @date 2020/3/7 10:48
- **/
+ */
 @Path("/advertisements")
 @Component
 @Produces(MediaType.APPLICATION_JSON)
@@ -46,6 +44,6 @@ public class AdvertisementResource {
     @GET
     @Cacheable("resource.advertisements")
     public Iterable<Advertisement> getAllAdvertisements() {
-        return repository.findAll();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

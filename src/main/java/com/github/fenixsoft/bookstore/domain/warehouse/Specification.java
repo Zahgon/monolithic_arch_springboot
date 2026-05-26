@@ -15,11 +15,9 @@
  *
  *        https://github.com/fenixsoft
  */
-
 package com.github.fenixsoft.bookstore.domain.warehouse;
 
 import com.github.fenixsoft.bookstore.domain.BaseEntity;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.constraints.NotEmpty;
@@ -30,7 +28,7 @@ import javax.validation.constraints.NotNull;
  *
  * @author icyfenix@gmail.com
  * @date 2020/3/6 19:33
- **/
+ */
 @Entity
 public class Specification extends BaseEntity {
 
@@ -45,26 +43,26 @@ public class Specification extends BaseEntity {
     private Integer productId;
 
     public String getItem() {
-        return item;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void setItem(String item) {
-        this.item = item;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String getValue() {
-        return value;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void setValue(String value) {
-        this.value = value;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public Integer getProductId() {
-        return productId;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void setProductId(Integer productId) {
-        this.productId = productId;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

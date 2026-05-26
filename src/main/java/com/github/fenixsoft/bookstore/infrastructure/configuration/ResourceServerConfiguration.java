@@ -15,7 +15,6 @@
  *
  *        https://github.com/fenixsoft
  */
-
 package com.github.fenixsoft.bookstore.infrastructure.configuration;
 
 import com.github.fenixsoft.bookstore.domain.auth.service.JWTAccessTokenService;
@@ -30,7 +29,6 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
-
 import javax.annotation.security.RolesAllowed;
 
 /**
@@ -44,7 +42,7 @@ import javax.annotation.security.RolesAllowed;
  *
  * @author icyfenix@gmail.com
  * @date 2020/3/7 19:43
- **/
+ */
 @Configuration
 @EnableResourceServer
 public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter {
@@ -56,19 +54,11 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
      * 配置HTTP访问相关的安全选项
      */
     public void configure(HttpSecurity http) throws Exception {
-        // 基于JWT来绑定用户状态，所以服务端可以是无状态的
-        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-        // 关闭CSRF（Cross Site Request Forgery）跨站请求伪造的防御
-        // 因为需要状态存储CSRF Token才能开启该功能
-        http.csrf().disable();
-        // 关闭HTTP Header中的X-Frame-Options选项，允许页面在frame标签中打开
-        http.headers().frameOptions().disable();
-        // 设置服务的安全规则
-        http.authorizeRequests().antMatchers("/oauth/**").permitAll();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) {
-        resources.tokenServices(tokenService);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

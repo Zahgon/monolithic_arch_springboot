@@ -7,7 +7,6 @@ import org.springframework.cache.caffeine.CaffeineCache;
 import org.springframework.cache.caffeine.CaffeineCacheManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -15,7 +14,7 @@ import java.util.concurrent.TimeUnit;
  *
  * @author icyfenix@gmail.com
  * @date 2020/4/7 17:38
- **/
+ */
 @Configuration
 public class CacheConfiguration {
 
@@ -27,14 +26,11 @@ public class CacheConfiguration {
 
     @Bean
     public CacheManager configCacheManager() {
-        CaffeineCacheManager manager = new CaffeineCacheManager();
-        manager.setCaffeine(Caffeine.newBuilder().expireAfterWrite(SYSTEM_DEFAULT_EXPIRES, TimeUnit.MILLISECONDS));
-        return manager;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Bean(name = "settlement")
     public Cache getSettlementTTLCache() {
-        return new CaffeineCache("settlement", Caffeine.newBuilder().expireAfterAccess(SYSTEM_DEFAULT_EXPIRES, TimeUnit.MILLISECONDS).build());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

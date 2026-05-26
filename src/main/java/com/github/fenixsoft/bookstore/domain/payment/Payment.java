@@ -15,13 +15,11 @@
  *
  *        https://github.com/fenixsoft
  */
-
 package com.github.fenixsoft.bookstore.domain.payment;
 
 import com.github.fenixsoft.bookstore.domain.BaseEntity;
 import com.github.fenixsoft.bookstore.domain.account.Account;
 import org.springframework.security.core.context.SecurityContextHolder;
-
 import javax.persistence.Entity;
 import java.util.Date;
 import java.util.UUID;
@@ -33,7 +31,7 @@ import java.util.UUID;
  *
  * @author icyfenix@gmail.com
  * @date 2020/3/12 17:07
- **/
+ */
 @Entity
 public class Payment extends BaseEntity {
 
@@ -41,6 +39,7 @@ public class Payment extends BaseEntity {
      * 支付状态
      */
     public enum State {
+
         /**
          * 等待支付中
          */
@@ -87,50 +86,50 @@ public class Payment extends BaseEntity {
     private State payState;
 
     public String getPayId() {
-        return payId;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void setPayId(String payId) {
-        this.payId = payId;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public Date getCreateTime() {
-        return createTime;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public Long getExpires() {
-        return expires;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void setExpires(Long expires) {
-        this.expires = expires;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String getPaymentLink() {
-        return paymentLink;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void setPaymentLink(String paymentLink) {
-        this.paymentLink = paymentLink;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public Double getTotalPrice() {
-        return totalPrice;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void setTotalPrice(Double totalPrice) {
-        this.totalPrice = totalPrice;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public State getPayState() {
-        return payState;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void setPayState(State payState) {
-        this.payState = payState;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

@@ -15,7 +15,6 @@
  *
  *        https://github.com/fenixsoft
  */
-
 package com.github.fenixsoft.bookstore.infrastructure.configuration;
 
 import com.github.fenixsoft.bookstore.domain.auth.service.AuthenticAccountDetailsService;
@@ -39,7 +38,7 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
  *
  * @author icyfenix@gmail.com
  * @date 2020/3/7 17:38
- **/
+ */
 @Configuration
 @EnableAuthorizationServer
 public class AuthorizationServerConfiguration extends AuthorizationServerConfigurerAdapter {
@@ -71,13 +70,12 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
     @Autowired
     private AuthenticAccountDetailsService accountService;
 
-
     /**
      * 配置客户端详情服务
      */
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-        clients.withClientDetails(clientService);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -94,11 +92,7 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
      */
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoint) {
-        endpoint.authenticationManager(authenticationManager)
-                .userDetailsService(accountService)
-                .tokenServices(tokenService)
-                //控制TokenEndpoint端点请求访问的类型，默认HttpMethod.POST
-                .allowedTokenEndpointRequestMethods(HttpMethod.GET, HttpMethod.POST);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -110,7 +104,6 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
      */
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) {
-        security.allowFormAuthenticationForClients().tokenKeyAccess("permitAll()").checkTokenAccess("permitAll()");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

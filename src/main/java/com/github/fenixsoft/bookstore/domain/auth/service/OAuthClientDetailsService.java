@@ -15,7 +15,6 @@
  *
  *        https://github.com/fenixsoft
  */
-
 package com.github.fenixsoft.bookstore.domain.auth.service;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -23,7 +22,6 @@ import org.springframework.security.oauth2.config.annotation.builders.InMemoryCl
 import org.springframework.security.oauth2.provider.ClientDetails;
 import org.springframework.security.oauth2.provider.ClientDetailsService;
 import org.springframework.security.oauth2.provider.ClientRegistrationException;
-
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -39,7 +37,7 @@ import javax.inject.Named;
  *
  * @author icyfenix@gmail.com
  * @date 2020/3/7 19:45
- **/
+ */
 @Named
 public class OAuthClientDetailsService implements ClientDetailsService {
 
@@ -48,6 +46,7 @@ public class OAuthClientDetailsService implements ClientDetailsService {
      * 这里的客户端就是指本项目的前端代码
      */
     private static final String CLIENT_ID = "bookstore_frontend";
+
     /**
      * 客户端密钥
      * 在OAuth2协议中，ID是可以公开的，密钥应当保密，密钥用以证明当前申请授权的客户端是未被冒充的
@@ -71,13 +70,7 @@ public class OAuthClientDetailsService implements ClientDetailsService {
      */
     @PostConstruct
     public void init() throws Exception {
-        InMemoryClientDetailsServiceBuilder builder = new InMemoryClientDetailsServiceBuilder();
-        // 提供客户端ID和密钥，并指定该客户端支持密码授权、刷新令牌两种访问类型
-        builder.withClient(CLIENT_ID)
-                .secret(passwordEncoder.encode(CLIENT_SECRET))
-                .scopes("BROWSER")
-                .authorizedGrantTypes("password", "refresh_token");
-        clientDetailsService = builder.build();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -85,6 +78,6 @@ public class OAuthClientDetailsService implements ClientDetailsService {
      */
     @Override
     public ClientDetails loadClientByClientId(String clientId) throws ClientRegistrationException {
-        return clientDetailsService.loadClientByClientId(clientId);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

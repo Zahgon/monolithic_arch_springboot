@@ -15,13 +15,11 @@
  *
  *        https://github.com/fenixsoft
  */
-
 package com.github.fenixsoft.bookstore.applicaiton;
 
 import com.github.fenixsoft.bookstore.domain.account.Account;
 import com.github.fenixsoft.bookstore.domain.account.AccountRepository;
 import com.github.fenixsoft.bookstore.infrastructure.utility.Encryption;
-
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.transaction.Transactional;
@@ -31,7 +29,7 @@ import javax.transaction.Transactional;
  *
  * @author icyfenix@gmail.com
  * @date 2020/3/10 17:46
- **/
+ */
 @Named
 @Transactional
 public class AccountApplicationService {
@@ -43,16 +41,14 @@ public class AccountApplicationService {
     private Encryption encoder;
 
     public void createAccount(Account account) {
-        account.setPassword(encoder.encode(account.getPassword()));
-        repository.save(account);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public Account findAccountByUsername(String username) {
-        return repository.findByUsername(username);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void updateAccount(Account account) {
-        repository.save(account);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

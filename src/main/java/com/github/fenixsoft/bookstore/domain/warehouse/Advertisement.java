@@ -15,11 +15,9 @@
  *
  *        https://github.com/fenixsoft
  */
-
 package com.github.fenixsoft.bookstore.domain.warehouse;
 
 import com.github.fenixsoft.bookstore.domain.BaseEntity;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.constraints.NotEmpty;
@@ -30,7 +28,7 @@ import javax.validation.constraints.NotNull;
  *
  * @author icyfenix@gmail.com
  * @date 2020/3/7 10:49
- **/
+ */
 @Entity
 public class Advertisement extends BaseEntity {
 
@@ -42,18 +40,18 @@ public class Advertisement extends BaseEntity {
     private Integer productId;
 
     public String getImage() {
-        return image;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void setImage(String image) {
-        this.image = image;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public Integer getProductId() {
-        return productId;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void setProductId(Integer productId) {
-        this.productId = productId;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

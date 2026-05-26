@@ -15,7 +15,6 @@
  *
  *        https://github.com/fenixsoft
  */
-
 package com.github.fenixsoft.bookstore.domain;
 
 import javax.persistence.GeneratedValue;
@@ -29,7 +28,7 @@ import java.io.Serializable;
  *
  * @author icyfenix@gmail.com
  * @date 2020/3/6 10:52
- **/
+ */
 @MappedSuperclass
 public class BaseEntity implements Serializable {
 
@@ -38,11 +37,10 @@ public class BaseEntity implements Serializable {
     private Integer id;
 
     public Integer getId() {
-        return id;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void setId(Integer id) {
-        this.id = id;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

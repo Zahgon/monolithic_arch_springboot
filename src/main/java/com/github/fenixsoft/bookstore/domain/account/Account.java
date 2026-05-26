@@ -15,12 +15,10 @@
  *
  *        https://github.com/fenixsoft
  */
-
 package com.github.fenixsoft.bookstore.domain.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.github.fenixsoft.bookstore.domain.BaseEntity;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.constraints.Email;
@@ -60,58 +58,58 @@ public class Account extends BaseEntity {
     private String location;
 
     public String getUsername() {
-        return username;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String getPassword() {
-        return password;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String getName() {
-        return name;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void setName(String name) {
-        this.name = name;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String getAvatar() {
-        return avatar;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void setAvatar(String avatar) {
-        this.avatar = avatar;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String getTelephone() {
-        return telephone;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void setTelephone(String telephone) {
-        this.telephone = telephone;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String getEmail() {
-        return email;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public String getLocation() {
-        return location;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void setLocation(String location) {
-        this.location = location;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

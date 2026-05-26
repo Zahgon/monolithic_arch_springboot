@@ -15,12 +15,10 @@
  *
  *        https://github.com/fenixsoft
  */
-
 package com.github.fenixsoft.bookstore.domain.payment;
 
 import com.github.fenixsoft.bookstore.domain.BaseEntity;
 import com.github.fenixsoft.bookstore.domain.warehouse.Product;
-
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
@@ -31,7 +29,7 @@ import javax.persistence.OneToOne;
  *
  * @author icyfenix@gmail.com
  * @date 2020/3/12 16:34
- **/
+ */
 @Entity
 public class Stockpile extends BaseEntity {
 
@@ -44,35 +42,34 @@ public class Stockpile extends BaseEntity {
     private transient Product product;
 
     public Integer getAmount() {
-        return amount;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void setAmount(Integer amount) {
-        this.amount = amount;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void frozen(Integer number) {
-        this.amount -= number;
-        this.frozen += number;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void thawed(Integer number) {
-        frozen(-1 * number);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void decrease(Integer number) {
-        this.frozen -= number;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void increase(Integer number) {
-        this.amount += number;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public Product getProduct() {
-        return product;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void setProduct(Product product) {
-        this.product = product;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

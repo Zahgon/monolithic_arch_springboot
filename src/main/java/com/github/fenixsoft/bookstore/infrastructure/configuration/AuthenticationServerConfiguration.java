@@ -15,7 +15,6 @@
  *
  *        https://github.com/fenixsoft
  */
-
 package com.github.fenixsoft.bookstore.infrastructure.configuration;
 
 import com.github.fenixsoft.bookstore.domain.auth.provider.PreAuthenticatedAuthenticationProvider;
@@ -41,7 +40,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  *
  * @author icyfenix@gmail.com
  * @date 2020/3/7 19:41
- **/
+ */
 @Configuration
 @EnableWebSecurity
 public class AuthenticationServerConfiguration extends WebSecurityConfiguration {
@@ -58,7 +57,6 @@ public class AuthenticationServerConfiguration extends WebSecurityConfiguration 
     @Autowired
     private PasswordEncoder encoder;
 
-
     /**
      * 需要把AuthenticationManager主动暴漏出来
      * 以便在授权服务器{@link AuthorizationServerConfiguration}中可以使用它来完成用户名、密码的认证
@@ -66,7 +64,7 @@ public class AuthenticationServerConfiguration extends WebSecurityConfiguration 
     @Bean
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
-        return super.authenticationManagerBean();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -75,8 +73,6 @@ public class AuthenticationServerConfiguration extends WebSecurityConfiguration 
      */
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(authenticAccountDetailsService).passwordEncoder(encoder);
-        auth.authenticationProvider(userProvider);
-        auth.authenticationProvider(preProvider);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

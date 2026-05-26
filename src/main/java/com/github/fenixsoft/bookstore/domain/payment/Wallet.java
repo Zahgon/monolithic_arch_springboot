@@ -15,12 +15,10 @@
  *
  *        https://github.com/fenixsoft
  */
-
 package com.github.fenixsoft.bookstore.domain.payment;
 
 import com.github.fenixsoft.bookstore.domain.BaseEntity;
 import com.github.fenixsoft.bookstore.domain.account.Account;
-
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
@@ -31,8 +29,7 @@ import javax.persistence.OneToOne;
  *
  * @author icyfenix@gmail.com
  * @date 2020/3/12 16:30
- **/
-
+ */
 @Entity
 public class Wallet extends BaseEntity {
 
@@ -44,18 +41,18 @@ public class Wallet extends BaseEntity {
     private Account account;
 
     public Double getMoney() {
-        return money;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void setMoney(Double money) {
-        this.money = money;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public Account getAccount() {
-        return account;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void setAccount(Account account) {
-        this.account = account;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

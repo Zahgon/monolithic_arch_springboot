@@ -3,7 +3,6 @@ package com.github.fenixsoft.bookstore.infrastructure.jaxrs;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.access.AccessDeniedException;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
@@ -15,7 +14,7 @@ import javax.ws.rs.ext.Provider;
  *
  * @author icyfenix@gmail.com
  * @date 2020/4/7 0:09
- **/
+ */
 @Provider
 public class AccessDeniedExceptionMapper implements ExceptionMapper<AccessDeniedException> {
 
@@ -26,7 +25,6 @@ public class AccessDeniedExceptionMapper implements ExceptionMapper<AccessDenied
 
     @Override
     public Response toResponse(AccessDeniedException exception) {
-        log.warn("越权访问被禁止 {}: {}", request.getMethod(), request.getPathInfo());
-        return CommonResponse.send(Response.Status.FORBIDDEN, exception.getMessage());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

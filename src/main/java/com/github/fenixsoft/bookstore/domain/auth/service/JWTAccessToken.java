@@ -15,7 +15,6 @@
  *
  *        https://github.com/fenixsoft
  */
-
 package com.github.fenixsoft.bookstore.domain.auth.service;
 
 import org.springframework.security.core.Authentication;
@@ -27,7 +26,6 @@ import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.security.oauth2.provider.token.DefaultAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.DefaultUserAuthenticationConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
-
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.HashMap;
@@ -74,14 +72,6 @@ public class JWTAccessToken extends JwtAccessTokenConverter {
      */
     @Override
     public OAuth2AccessToken enhance(OAuth2AccessToken accessToken, OAuth2Authentication authentication) {
-        Authentication user = authentication.getUserAuthentication();
-        String[] authorities = user.getAuthorities().stream().map(GrantedAuthority::getAuthority).toArray(String[]::new);
-        Map<String, Object> payLoad = new HashMap<>();
-        // Spring Security OAuth的JWT令牌默认实现中就加入了一个“user_name”的项存储了当前用户名
-        // 这里主要是出于演示Payload的用途，以及方便客户端获取（否则客户端要从令牌中解码Base64来获取），设置了一个“username”，两者的内容是一致的
-        payLoad.put("username", user.getName());
-        payLoad.put("authorities", authorities);
-        ((DefaultOAuth2AccessToken) accessToken).setAdditionalInformation(payLoad);
-        return super.enhance(accessToken, authentication);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

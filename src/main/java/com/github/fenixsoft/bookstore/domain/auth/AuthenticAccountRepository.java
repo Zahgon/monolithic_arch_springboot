@@ -15,7 +15,6 @@
  *
  *        https://github.com/fenixsoft
  */
-
 package com.github.fenixsoft.bookstore.domain.auth;
 
 import com.github.fenixsoft.bookstore.domain.account.AccountRepository;
@@ -23,7 +22,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.oauth2.common.exceptions.UnauthorizedUserException;
 import org.springframework.stereotype.Component;
-
 import java.util.Optional;
 
 /**
@@ -31,7 +29,7 @@ import java.util.Optional;
  *
  * @author icyfenix@gmail.com
  * @date 2020/3/8 15:21
- **/
+ */
 @Component
 public class AuthenticAccountRepository {
 
@@ -39,6 +37,6 @@ public class AuthenticAccountRepository {
     private AccountRepository databaseUserRepo;
 
     public AuthenticAccount findByUsername(String username) {
-        return new AuthenticAccount(Optional.ofNullable(databaseUserRepo.findByUsername(username)).orElseThrow(() -> new UsernameNotFoundException("用户" + username + "不存在")));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

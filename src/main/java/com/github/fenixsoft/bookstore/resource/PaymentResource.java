@@ -15,7 +15,6 @@
  *
  *        https://github.com/fenixsoft
  */
-
 package com.github.fenixsoft.bookstore.resource;
 
 import com.github.fenixsoft.bookstore.applicaiton.payment.PaymentApplicationService;
@@ -27,7 +26,6 @@ import com.github.fenixsoft.bookstore.domain.payment.Stockpile;
 import com.github.fenixsoft.bookstore.infrastructure.jaxrs.CommonResponse;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
-
 import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -39,7 +37,7 @@ import javax.ws.rs.core.Response;
  *
  * @author icyfenix@gmail.com
  * @date 2020/3/13 12:52
- **/
+ */
 @Path("/pay")
 @Component
 @Produces(MediaType.APPLICATION_JSON)
@@ -55,8 +53,7 @@ public class PaymentResource {
     @Path("/{payId}")
     @RolesAllowed(Role.USER)
     public Response updatePaymentState(@PathParam("payId") String payId, @QueryParam("state") Payment.State state) {
-        Account account = (Account) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        return updatePaymentStateAlias(payId, account.getId(), state);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -67,11 +64,6 @@ public class PaymentResource {
     @GET
     @Path("/modify/{payId}")
     public Response updatePaymentStateAlias(@PathParam("payId") String payId, @QueryParam("accountId") Integer accountId, @QueryParam("state") Payment.State state) {
-        if (state == Payment.State.PAYED) {
-            return CommonResponse.op(() -> service.accomplishPayment(accountId, payId));
-        } else {
-            return CommonResponse.op(() -> service.cancelPayment(payId));
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

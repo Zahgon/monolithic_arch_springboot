@@ -11,16 +11,16 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
  *
  * @author icyfenix@gmail.com
  * @date 2020/4/8 0:09
- **/
+ */
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.headers().cacheControl().disable();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @Override
     public void configure(WebSecurity web) {
-        web.ignoring().antMatchers("/static/**");
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

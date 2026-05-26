@@ -15,7 +15,6 @@
  *
  *        https://github.com/fenixsoft
  */
-
 package com.github.fenixsoft.bookstore.domain.auth.provider;
 
 import com.github.fenixsoft.bookstore.domain.auth.service.AuthenticAccountDetailsService;
@@ -27,7 +26,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
-
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -57,15 +55,7 @@ public class UsernamePasswordAuthenticationProvider implements AuthenticationPro
      */
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-        String username = authentication.getName().toLowerCase();
-        String password = (String) authentication.getCredentials();
-        // AuthenticationException的子类定义了多种认证失败的类型，这里仅处“理用户不存在”、“密码不正确”两种
-        // 用户不存在的话会直接由loadUserByUsername()抛出异常
-        UserDetails user = authenticAccountDetailsService.loadUserByUsername(username);
-        if (!passwordEncoder.matches(password, user.getPassword())) throw new BadCredentialsException("密码不正确");
-        // 认证通过，返回令牌
-        return new UsernamePasswordAuthenticationToken(user, password, user.getAuthorities());
-
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -73,7 +63,6 @@ public class UsernamePasswordAuthenticationProvider implements AuthenticationPro
      */
     @Override
     public boolean supports(Class<?> clazz) {
-        return clazz.equals(UsernamePasswordAuthenticationToken.class);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

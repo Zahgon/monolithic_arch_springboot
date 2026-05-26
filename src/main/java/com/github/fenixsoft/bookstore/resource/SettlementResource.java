@@ -15,7 +15,6 @@
  *
  *        https://github.com/fenixsoft
  */
-
 package com.github.fenixsoft.bookstore.resource;
 
 import com.github.fenixsoft.bookstore.applicaiton.payment.PaymentApplicationService;
@@ -24,7 +23,6 @@ import com.github.fenixsoft.bookstore.domain.auth.Role;
 import com.github.fenixsoft.bookstore.domain.payment.Payment;
 import com.github.fenixsoft.bookstore.domain.payment.validation.SufficientStock;
 import org.springframework.stereotype.Component;
-
 import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.validation.Valid;
@@ -39,7 +37,7 @@ import javax.ws.rs.core.MediaType;
  *
  * @author icyfenix@gmail.com
  * @date 2020/3/12 11:23
- **/
+ */
 @Path("/settlements")
 @Component
 @Produces(MediaType.APPLICATION_JSON)
@@ -55,7 +53,6 @@ public class SettlementResource {
     @POST
     @RolesAllowed(Role.USER)
     public Payment executeSettlement(@Valid @SufficientStock Settlement settlement) {
-        return service.executeBySettlement(settlement);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

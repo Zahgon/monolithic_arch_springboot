@@ -15,11 +15,9 @@
  *
  *        https://github.com/fenixsoft
  */
-
 package com.github.fenixsoft.bookstore.domain.warehouse;
 
 import com.github.fenixsoft.bookstore.applicaiton.payment.dto.Settlement;
-
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.List;
@@ -31,7 +29,7 @@ import java.util.stream.Collectors;
  *
  * @author icyfenix@gmail.com
  * @date 2020/3/12 20:58
- **/
+ */
 @Named
 public class ProductService {
 
@@ -42,36 +40,34 @@ public class ProductService {
      * 根据结算单中货物的ID，填充货物的完整信息到结算单对象上
      */
     public void replenishProductInformation(Settlement bill) {
-        List<Integer> ids = bill.getItems().stream().map(Settlement.Item::getProductId).collect(Collectors.toList());
-        bill.productMap = repository.findByIdIn(ids).stream().collect(Collectors.toMap(Product::getId, Function.identity()));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * 获取仓库中所有的货物信息
      */
     public Iterable<Product> getAllProducts() {
-        return repository.findAll();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * 获取仓库中指定的货物信息
      */
     public Product getProduct(Integer id) {
-        return repository.findById(id).orElse(null);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * 创建或者更新产品信息
      */
     public Product saveProduct(Product product) {
-        return repository.save(product);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * 删除指定产品
      */
     public void removeProduct(Integer id) {
-        repository.deleteById(id);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

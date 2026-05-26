@@ -15,12 +15,10 @@
  *
  *        https://github.com/fenixsoft
  */
-
 package com.github.fenixsoft.bookstore.domain.payment.validation;
 
 import com.github.fenixsoft.bookstore.applicaiton.payment.dto.Settlement;
 import com.github.fenixsoft.bookstore.domain.payment.StockpileService;
-
 import javax.inject.Inject;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
@@ -36,7 +34,7 @@ import javax.validation.ConstraintValidatorContext;
  *
  * @author icyfenix@gmail.com
  * @date 2020/3/16 9:02
- **/
+ */
 public class SettlementValidator implements ConstraintValidator<SufficientStock, Settlement> {
 
     @Inject
@@ -44,6 +42,6 @@ public class SettlementValidator implements ConstraintValidator<SufficientStock,
 
     @Override
     public boolean isValid(Settlement value, ConstraintValidatorContext context) {
-        return value.getItems().stream().noneMatch(i -> service.getByProductId(i.getProductId()).getAmount() < i.getAmount());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

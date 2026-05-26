@@ -15,7 +15,6 @@
  *
  *        https://github.com/fenixsoft
  */
-
 package com.github.fenixsoft.bookstore.resource;
 
 import com.github.fenixsoft.bookstore.applicaiton.ProductApplicationService;
@@ -28,7 +27,6 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.Caching;
 import org.springframework.stereotype.Component;
-
 import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.validation.Valid;
@@ -41,8 +39,7 @@ import javax.ws.rs.core.Response;
  *
  * @author icyfenix@gmail.com
  * @date 2020/3/6 20:52
- **/
-
+ */
 @Path("/products")
 @Component
 @CacheConfig(cacheNames = "resource.product")
@@ -58,7 +55,7 @@ public class ProductResource {
     @GET
     @Cacheable(key = "'ALL_PRODUCT'")
     public Iterable<Product> getAllProducts() {
-        return service.getAllProducts();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -68,33 +65,27 @@ public class ProductResource {
     @Path("/{id}")
     @Cacheable(key = "#id")
     public Product getProduct(@PathParam("id") Integer id) {
-        return service.getProduct(id);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * 更新产品信息
      */
     @PUT
-    @Caching(evict = {
-            @CacheEvict(key = "#product.id"),
-            @CacheEvict(key = "'ALL_PRODUCT'")
-    })
+    @Caching(evict = { @CacheEvict(key = "#product.id"), @CacheEvict(key = "'ALL_PRODUCT'") })
     @RolesAllowed(Role.ADMIN)
     public Response updateProduct(@Valid Product product) {
-        return CommonResponse.op(() -> service.saveProduct(product));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * 创建新的产品
      */
     @POST
-    @Caching(evict = {
-            @CacheEvict(key = "#product.id"),
-            @CacheEvict(key = "'ALL_PRODUCT'")
-    })
+    @Caching(evict = { @CacheEvict(key = "#product.id"), @CacheEvict(key = "'ALL_PRODUCT'") })
     @RolesAllowed(Role.ADMIN)
     public Product createProduct(@Valid Product product) {
-        return service.saveProduct(product);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -102,13 +93,10 @@ public class ProductResource {
      */
     @DELETE
     @Path("/{id}")
-    @Caching(evict = {
-            @CacheEvict(key = "#id"),
-            @CacheEvict(key = "'ALL_PRODUCT'")
-    })
+    @Caching(evict = { @CacheEvict(key = "#id"), @CacheEvict(key = "'ALL_PRODUCT'") })
     @RolesAllowed(Role.ADMIN)
     public Response removeProduct(@PathParam("id") Integer id) {
-        return CommonResponse.op(() -> service.removeProduct(id));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -118,7 +106,7 @@ public class ProductResource {
     @Path("/stockpile/{productId}")
     @RolesAllowed(Role.ADMIN)
     public Response updateStockpile(@PathParam("productId") Integer productId, @QueryParam("amount") Integer amount) {
-        return CommonResponse.op(() -> service.setStockpileAmountByProductId(productId, amount));
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -128,7 +116,6 @@ public class ProductResource {
     @Path("/stockpile/{productId}")
     @RolesAllowed(Role.ADMIN)
     public Stockpile queryStockpile(@PathParam("productId") Integer productId) {
-        return service.getStockpile(productId);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

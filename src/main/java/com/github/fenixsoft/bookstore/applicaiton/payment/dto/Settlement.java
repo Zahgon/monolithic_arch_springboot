@@ -15,12 +15,10 @@
  *
  *        https://github.com/fenixsoft
  */
-
 package com.github.fenixsoft.bookstore.applicaiton.payment.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.github.fenixsoft.bookstore.domain.warehouse.Product;
-
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -33,7 +31,7 @@ import java.util.Map;
  *
  * @author icyfenix@gmail.com
  * @date 2020/3/12 11:35
- **/
+ */
 public class Settlement {
 
     @Size(min = 1, message = "结算单中缺少商品清单")
@@ -49,25 +47,26 @@ public class Settlement {
     public transient Map<Integer, Product> productMap;
 
     public Collection<Item> getItems() {
-        return items;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void setItems(Collection<Item> items) {
-        this.items = items;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public Purchase getPurchase() {
-        return purchase;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void setPurchase(Purchase purchase) {
-        this.purchase = purchase;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
      * 结算单中要购买的商品
      */
     public static class Item {
+
         @NotNull(message = "结算单中必须有明确的商品数量")
         @Min(value = 1, message = "结算单中商品数量至少为一件")
         private Integer amount;
@@ -77,19 +76,19 @@ public class Settlement {
         private Integer productId;
 
         public Integer getAmount() {
-            return amount;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public void setAmount(Integer amount) {
-            this.amount = amount;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public Integer getProductId() {
-            return productId;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public void setProductId(Integer productId) {
-            this.productId = productId;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
     }
 
@@ -113,44 +112,43 @@ public class Settlement {
         private String location;
 
         public Boolean getDelivery() {
-            return delivery;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public void setDelivery(Boolean delivery) {
-            this.delivery = delivery;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public String getPay() {
-            return pay;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public void setPay(String pay) {
-            this.pay = pay;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public String getName() {
-            return name;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public void setName(String name) {
-            this.name = name;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public String getTelephone() {
-            return telephone;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public void setTelephone(String telephone) {
-            this.telephone = telephone;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public String getLocation() {
-            return location;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public void setLocation(String location) {
-            this.location = location;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
     }
-
 }

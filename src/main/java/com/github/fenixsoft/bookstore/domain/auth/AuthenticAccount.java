@@ -15,7 +15,6 @@
  *
  *        https://github.com/fenixsoft
  */
-
 package com.github.fenixsoft.bookstore.domain.auth;
 
 import com.github.fenixsoft.bookstore.domain.account.Account;
@@ -23,7 +22,6 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import java.util.Collection;
 import java.util.HashSet;
 
@@ -35,7 +33,7 @@ import java.util.HashSet;
  *
  * @author icyfenix@gmail.com
  * @date 2020/3/7 20:46
- **/
+ */
 public class AuthenticAccount extends Account implements UserDetails {
 
     public AuthenticAccount() {
@@ -59,11 +57,11 @@ public class AuthenticAccount extends Account implements UserDetails {
 
     @Override
     public Collection<GrantedAuthority> getAuthorities() {
-        return authorities;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public void setAuthorities(Collection<GrantedAuthority> authorities) {
-        this.authorities = authorities;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -71,7 +69,7 @@ public class AuthenticAccount extends Account implements UserDetails {
      */
     @Override
     public boolean isAccountNonExpired() {
-        return true;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -79,7 +77,7 @@ public class AuthenticAccount extends Account implements UserDetails {
      */
     @Override
     public boolean isAccountNonLocked() {
-        return true;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -87,7 +85,7 @@ public class AuthenticAccount extends Account implements UserDetails {
      */
     @Override
     public boolean isCredentialsNonExpired() {
-        return true;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -95,6 +93,6 @@ public class AuthenticAccount extends Account implements UserDetails {
      */
     @Override
     public boolean isEnabled() {
-        return true;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

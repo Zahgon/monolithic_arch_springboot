@@ -15,7 +15,6 @@
  *
  *        https://github.com/fenixsoft
  */
-
 package com.github.fenixsoft.bookstore.domain.payment;
 
 import com.github.fenixsoft.bookstore.applicaiton.payment.dto.Settlement;
@@ -23,7 +22,6 @@ import com.github.fenixsoft.bookstore.infrastructure.cache.CacheConfiguration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cache.Cache;
-
 import javax.annotation.Resource;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -37,9 +35,10 @@ import java.util.TimerTask;
  *
  * @author icyfenix@gmail.com
  * @date 2020/3/12 23:24
- **/
+ */
 @Named
 public class PaymentService {
+
     /**
      * 默认支付单超时时间：2分钟（缓存TTL时间的一半）
      */
@@ -58,23 +57,13 @@ public class PaymentService {
     @Resource(name = "settlement")
     private Cache settlementCache;
 
-
     /**
      * 生成支付单
      * <p>
      * 根据结算单冻结指定的货物，计算总价，生成支付单
      */
     public Payment producePayment(Settlement bill) {
-        Double total = bill.getItems().stream().mapToDouble(i -> {
-            stockpileService.frozen(i.getProductId(), i.getAmount());
-            return bill.productMap.get(i.getProductId()).getPrice() * i.getAmount();
-        }).sum() + 12;   // 12元固定运费，客户端写死的，这里陪着演一下，避免总价对不上
-        Payment payment = new Payment(total, DEFAULT_PRODUCT_FROZEN_EXPIRES);
-        paymentRepository.save(payment);
-        // 将支付单存入缓存
-        settlementCache.put(payment.getPayId(), bill);
-        log.info("创建支付订单，总额：{}", payment.getTotalPrice());
-        return payment;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -83,18 +72,7 @@ public class PaymentService {
      * 意味着客户已经完成付款，这个方法在正式业务中应当作为三方支付平台的回调，而演示项目就直接由客户端发起调用了
      */
     public double accomplish(String payId) {
-        synchronized (payId.intern()) {
-            Payment payment = paymentRepository.getByPayId(payId);
-            if (payment.getPayState() == Payment.State.WAITING) {
-                payment.setPayState(Payment.State.PAYED);
-                paymentRepository.save(payment);
-                accomplishSettlement(Payment.State.PAYED, payment.getPayId());
-                log.info("编号为{}的支付单已处理完成，等待支付", payId);
-                return payment.getTotalPrice();
-            } else {
-                throw new UnsupportedOperationException("当前订单不允许支付，当前状态为：" + payment.getPayState());
-            }
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -104,17 +82,7 @@ public class PaymentService {
      * 由于支付单的存储中应该保存而未持久化的购物明细（在Settlement中），所以这步就不做处理了，等2分钟后在触发器中释放
      */
     public void cancel(String payId) {
-        synchronized (payId.intern()) {
-            Payment payment = paymentRepository.getByPayId(payId);
-            if (payment.getPayState() == Payment.State.WAITING) {
-                payment.setPayState(Payment.State.CANCEL);
-                paymentRepository.save(payment);
-                accomplishSettlement(Payment.State.CANCEL, payment.getPayId());
-                log.info("编号为{}的支付单已被取消", payId);
-            } else {
-                throw new UnsupportedOperationException("当前订单不允许取消，当前状态为：" + payment.getPayState());
-            }
-        }
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -131,18 +99,7 @@ public class PaymentService {
      * 3. 即时只考虑正常支付的情况，真正生产环境中这种代码需要一个支持集群的同步锁（如用Redis实现互斥量），避免解冻支付和该支付单被完成两个事件同时在不同的节点中发生
      */
     public void setupAutoThawedTrigger(Payment payment) {
-        timer.schedule(new TimerTask() {
-            public void run() {
-                synchronized (payment.getPayId().intern()) {
-                    // 使用2分钟之前的Payment到数据库中查出当前的Payment
-                    Payment currentPayment = paymentRepository.findById(payment.getId()).orElseThrow(() -> new EntityNotFoundException(payment.getId().toString()));
-                    if (currentPayment.getPayState() == Payment.State.WAITING) {
-                        log.info("支付单{}当前状态为：WAITING，转变为：TIMEOUT", payment.getId());
-                        accomplishSettlement(Payment.State.TIMEOUT, payment.getPayId());
-                    }
-                }
-            }
-        }, payment.getExpires());
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     /**
@@ -159,5 +116,4 @@ public class PaymentService {
             }
         });
     }
-
 }

@@ -15,7 +15,6 @@
  *
  *        https://github.com/fenixsoft
  */
-
 package com.github.fenixsoft.bookstore;
 
 import org.springframework.boot.SpringApplication;
@@ -27,7 +26,8 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 @EnableCaching
 @EnableGlobalMethodSecurity(prePostEnabled = true, jsr250Enabled = true)
 public class BookstoreApplication {
+
     public static void main(String[] args) {
-        SpringApplication.run(BookstoreApplication.class, args);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 }

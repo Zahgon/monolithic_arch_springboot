@@ -15,14 +15,12 @@
  *
  *        https://github.com/fenixsoft
  */
-
 package com.github.fenixsoft.bookstore.domain.auth.service;
 
 import com.github.fenixsoft.bookstore.domain.auth.AuthenticAccountRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.Optional;
@@ -44,7 +42,6 @@ public class AuthenticAccountDetailsService implements UserDetailsService {
      */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return accountRepository.findByUsername(username);
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }
